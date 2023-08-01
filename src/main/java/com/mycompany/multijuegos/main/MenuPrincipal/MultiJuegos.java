@@ -3,12 +3,29 @@ package com.mycompany.multijuegos.main.MenuPrincipal;
 
 import com.mycompany.multijuegos.main.ahorcado.Ahorcado;
 import com.mycompany.multijuegos.main.baloncesto.Baloncesto;
+import com.mycompany.multijuegos.main.cartas.Cartas;
 import java.util.Scanner;
 
 public class MultiJuegos {
     
     public void irAlMenuPrincipal() {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese Parametro /a, /b ó /c:");
+        String parametro = scanner.nextLine();
+        System.out.println();
+        
+        if ("/a".equals(parametro) || "/b".equals(parametro) || "/c".equals(parametro)) {
+            if ("/a".equals(parametro)) {
+                Ahorcado ahorcado = new Ahorcado();
+                ahorcado.empezarPartida();
+            } else if ("/b".equals(parametro)) {
+                Baloncesto baloncesto = new Baloncesto();
+                baloncesto.empezarPartida();
+            } else if ("/c".equals(parametro)) {
+                Cartas cartas = new Cartas();
+                cartas.empezarPartida();
+            }
+        }
         
         while (true) {
             System.out.println();
@@ -29,7 +46,8 @@ public class MultiJuegos {
                 Baloncesto baloncesto = new Baloncesto();
                 baloncesto.empezarPartida();
             } else if (opcion == 3) {
-                
+                Cartas cartas = new Cartas();
+                cartas.empezarPartida();
             } else {
                 System.out.println("-----------------");
                 System.out.println("Gracias por Jugar");

@@ -15,17 +15,25 @@ public class Baloncesto {
         System.out.println("Escriba el Nombre del Segundo Jugador");
         jugador_2.guardarNombre(scanner.nextLine());
         System.out.println("Escriba el Número de Turnos");
-        try {
-            turnos = Integer.parseInt(scanner.nextLine());
-        }catch (NumberFormatException ex) {
-            System.out.println("Debe Ingresar el Número de Turnos");
+        
+        while (true) {
+            try {
+                turnos = Integer.parseInt(scanner.nextLine());
+                
+                if (turnos > 0) {
+                    break;
+                } else {
+                    System.out.println("Debe Ingresar el Número de Turnos");
+                }
+            }catch (NumberFormatException ex) {
+                System.out.println("Debe Ingresar el Número de Turnos");
+            }
         }
         System.out.println();
-        // Jadferh
 
         int indice = 1, ronda = 1;
         
-        while (indice != turnos) {
+        while (indice != turnos + 1) {
             String nombreJugador_1, nombreJugador_2;
             
             if (ronda == 1) {
@@ -33,23 +41,55 @@ public class Baloncesto {
             } else {
                 nombreJugador_2 = jugador_1.obtenerNombre(); nombreJugador_1 = jugador_2.obtenerNombre();
             }
-            
-            System.out.println(nombreJugador_1 + " seleccina el tipo de Lanzamiento que desea Realizar:");
-            System.out.println("    1. Tiro Largo");
-            System.out.println("    2. Tiro Corto");
-            try {
-                numeroDeTiro = Integer.parseInt(scanner.nextLine());
-            }catch (NumberFormatException ex) {
-                System.out.println("Debe Ingresar el Número de Tiro");
+            System.out.println("TURNO: " + indice);
+            while (true) {
+                System.out.println("(" + nombreJugador_1 + ") seleccina el tipo de Lanzamiento que desea Realizar:");
+                System.out.println("    1. Tiro Largo");
+                System.out.println("    2. Tiro Corto");
+                try {
+                    numeroDeTiro = Integer.parseInt(scanner.nextLine());
+                    
+                    if (numeroDeTiro == 1 || numeroDeTiro == 2) {
+                        break;
+                    } else {
+                        System.out.println();
+                        System.out.println("-------------------------------");
+                        System.out.println("Debe Ingresar el Número de Tiro");
+                        System.out.println("-------------------------------");
+                        System.out.println();
+                    }
+                }catch (NumberFormatException ex) {
+                    System.out.println();
+                    System.out.println("-------------------------------");
+                    System.out.println("Debe Ingresar el Número de Tiro");
+                    System.out.println("-------------------------------");
+                    System.out.println();
+                }
             }
-
-            System.out.println(nombreJugador_2 + " seleccina el tipo de Defensa que desea Realizar:");
-            System.out.println("    1. Defensa Cuerpo a Cuerpo");
-            System.out.println("    2. Defensa Fuerte");
-            try {
-                numeroDeDefensa = Integer.parseInt(scanner.nextLine());
-            }catch (NumberFormatException ex) {
-                System.out.println("Debe Ingresar el Número de Defensa");
+            
+            while (true) {
+                System.out.println("(" + nombreJugador_2 + ") seleccina el tipo de Defensa que desea Realizar:");
+                System.out.println("    1. Defensa Cuerpo a Cuerpo");
+                System.out.println("    2. Defensa Fuerte");
+                try {
+                    numeroDeDefensa = Integer.parseInt(scanner.nextLine());
+                    
+                    if (numeroDeDefensa == 1 || numeroDeDefensa == 2) {
+                        break;
+                    } else {
+                        System.out.println();
+                        System.out.println("-----------------------------------");
+                        System.out.println("Debe Ingresar el Número de Deefensa");
+                        System.out.println("-----------------------------------");
+                        System.out.println();
+                    }
+                }catch (NumberFormatException ex) {
+                    System.out.println();
+                    System.out.println("----------------------------------");
+                    System.out.println("Debe Ingresar el Número de Defensa");
+                    System.out.println("----------------------------------");
+                    System.out.println();
+                }
             }
             System.out.println();
             

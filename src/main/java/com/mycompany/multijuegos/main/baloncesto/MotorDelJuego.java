@@ -47,13 +47,13 @@ public class MotorDelJuego {
         } else {
             double randomTiro = Math.random();
             
+            System.out.println("----------------------------");
             if (randomTiro <= probabilidadDeTiro) {
-                System.out.println("----------------------------");
                 System.out.println("Anotación obtienes: " + puntos + " puntos");
-                System.out.println("----------------------------");
             } else {
                 System.out.println("¡¡¡Tiro Fallado!!!");
             }
+            System.out.println("----------------------------");
             System.out.println();
         }
         return puntos;
