@@ -99,6 +99,11 @@ public class Cartas {
             }
             System.out.println("-----------------------------------");
         }
+        System.out.println();
+        System.out.println("-----------------------------------------");
+        System.out.println("Te quedaste sin Dinero, partida Terminada");
+        System.out.println("-----------------------------------------");
+        System.out.println();
     }
     
     public int obtenerLimite() {

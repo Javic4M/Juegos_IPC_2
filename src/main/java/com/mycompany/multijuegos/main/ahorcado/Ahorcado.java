@@ -55,7 +55,9 @@ public class Ahorcado {
                     }
                     if (i == palabraAMostrar.length - 1) {
                         if (contador == 0) {
+                            System.out.println("-------");
                             System.out.println("Ganaste");
+                            System.out.println("-------");
                             salir = true;
                             break;
                         }
