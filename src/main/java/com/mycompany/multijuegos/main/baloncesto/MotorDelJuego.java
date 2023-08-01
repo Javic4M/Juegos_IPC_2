@@ -39,8 +39,12 @@ public class MotorDelJuego {
             
             if (randomTiroLibre <= 0.90) {
                 System.out.println("Anotación obtienes: 2 puntos");
+                if (puntos == 3) {
+                    puntos--;
+                }
             } else {
                 System.out.println("¡¡¡Tiro Fallado!!!");
+                puntos = 0;
             }
             System.out.println("--------------------------------");
             System.out.println();
@@ -52,6 +56,7 @@ public class MotorDelJuego {
                 System.out.println("Anotación obtienes: " + puntos + " puntos");
             } else {
                 System.out.println("¡¡¡Tiro Fallado!!!");
+                puntos = 0;
             }
             System.out.println("----------------------------");
             System.out.println();
